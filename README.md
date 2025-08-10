@@ -118,83 +118,74 @@ A **global-ready**, **civic-conscious** platform where:
 
 ## 📊 FRI Process Flow
 
-```mermaid
-flowchart LR
-  A[Initialize Baseline FRI] --> B[Deploy Scenario]
-  B --> C[Capture Signals]
-  C --> D[Apply Constraints & Ethics Gate]
-  D --> E[Score Across Axes]
-  E --> F[FRI Delta: Measure Change]
-  F --> G[Log & Store Readiness Debt]
+**Step-by-Step Overview**
+1. 🟢 **Initialize Baseline FRI** – Establish the starting resilience profile  
+2. 🚀 **Deploy Scenario** – Activate simulation or live drill  
+3. 📡 **Capture Signals** – Collect environmental, operational, and AI-agent data  
+4. ⚖️ **Apply Constraints & Ethics Gate** – Enforce operational and humanistic rules  
+5. 📈 **Score Across Axes** – Evaluate performance across civic, technical, and ethical dimensions  
+6. 🔄 **FRI Delta: Measure Change** – Quantify shifts from baseline readiness  
+7. 📂 **Log & Store Readiness Debt** – Archive metrics, deltas, and decision rationale  
 
-📚 Influences & References
-Carl Jung — Archetypal psychology & symbolic structures
+---
 
-Benoit Mandelbrot — Fractal geometry & complexity scaling
+## 📚 Influences & References
+- 🧠 **Carl Jung** — Archetypal psychology & symbolic structures  
+- 🌀 **Benoit Mandelbrot** — Fractal geometry & complexity scaling  
+- 🌪 **Chaos Theory** — Sensitivity to initial conditions, strange attractors  
+- ⚙️ **Homeostatic Theory** — Biological & cybernetic stability models  
+- 🖥 **Palantir-style UX** — Dense data environments with human-centered navigation  
+- 🤖 **HuggingFace** — Open model access & transparent AI evaluation  
 
-Chaos Theory — Sensitivity to initial conditions, strange attractors
+---
 
-Homeostatic Theory — Biological & cybernetic stability models
+## 🏗 Architecture Overview
+**Layered System Model**
 
-Palantir-style UX — Dense data environments with human-centered navigation
+- **L0 — Kernel Substrate**  
+  • Event Bus • Lifecycle Hooks • Policy Enforcer  
 
-HuggingFace — Open model access & transparent AI evaluation
+- **L1 — Constraint Layer**  
+  • Constraint Engine (*RED THREAD Contracts*)  
+  • Ethics Gate (*Homeostatic Ranges*)  
 
-🏗 Architecture Overview
+- **L2 — Processing**  
+  • Drift Monitor (*Symbolic & Operational Drift*)  
+  • Adversary Engine (*Multi-Vector Simulation*)  
 
-flowchart TB
-  subgraph L0[Kernel Substrate]
-    K[Event Bus • Lifecycle Hooks • Policy Enforcer]
-  end
+- **L3 — Memory**  
+  • Immutable Logs • Semantic Snapshots • Diff Analysis  
 
-  subgraph L1[Constraint Layer]
-    CE[Constraint Engine\nRED THREAD Contracts]
-    EG[Ethics Gate\nHomeostatic Ranges]
-  end
+- **L4 — Interface**  
+  • Ops Dashboard • Drill Console • Agent API  
+  • External Civic & Data API Connections  
 
-  subgraph L2[Processing]
-    DM[Drift Monitor\nSymbolic & Operational Drift]
-    AE[Adversary Engine\nMulti-Vector Simulation]
-  end
+---
 
-  subgraph L3[Memory]
-    ML[Immutable Logs • Semantic Snapshots • Diff Analysis]
-  end
+## 🔗 External Integrations
+- 🗄 **GitHub** — Public scenario repositories & versioning  
+- 🤖 **HuggingFace** — AI models for adversarial/cooperative agents  
+- 🌏 **GeoNet** — Earthquake, volcano, and geohazard data  
+- 🗺 **LINZ** — Geospatial datasets for NZ  
+- 💧 **LAWA** — Freshwater & environmental quality metrics  
 
-  subgraph L4[Interface]
-    UI[Ops Dashboard • Drill Console • Agent API]
-    EXT[(External Civic & Data APIs)]
-  end
+---
 
-  UI --> K
-  K --> CE
-  K --> DM
-  CE --> EG
-  DM --> AE
-  AE --> ML
-  ML --> UI
+## 💻 Tech Stack
 
-🔗 External Integrations
-GitHub — Public scenario repositories, versioning
+| Layer      | Technology |
+|------------|------------|
+| Frontend   | Next.js + Tailwind CSS |
+| Backend    | Cloudflare Workers / Functions |
+| Data       | JSON/YAML scenario specs, Civic APIs |
+| Visuals    | D3.js, Three.js for 3D scenario visualization |
+| Security   | RED THREAD constraint engine |
 
-HuggingFace — AI models for adversarial and cooperative agents
+---
 
-GeoNet — Earthquake, volcano, and geohazard data
+## 🏁 Quickstart (Local)
 
-LINZ — Geospatial datasets for NZ
-
-LAWA — Freshwater and environmental quality metrics
-
-💻 Tech Stack
-Layer	Technology
-Frontend	Next.js + Tailwind CSS
-Backend	Cloudflare Workers / Functions
-Data	JSON/YAML scenario specs, Civic APIs
-Visuals	Mermaid, D3.js, Three.js for 3D scenario viz
-Security	RED THREAD constraint engine
-
-🏁 Quickstart (Local)
-
+```bash
 # Clone
 git clone https://github.com/<your-org>/redthread-fri.git
 cd redthread-fri
@@ -207,15 +198,15 @@ npm run dev
 🌐 Deployment (Cloudflare Pages)
 Framework preset: Next.js
 
-Build command: npm install && npm run build
+Build command:
 
+bash
+Copy
+Edit
+npm install && npm run build
 Output directory: .next
 
-Env vars:
-
-NODE_VERSION=18.17.1
-
-NEXT_TELEMETRY_DISABLED=1
+Environment Variables:
 
 📜 License
 MIT — usable for lawful training & research purposes.
