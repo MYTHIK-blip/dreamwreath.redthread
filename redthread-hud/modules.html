@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en" data-page="modules">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>REDTHREAD HUD — Modules</title>
+  <meta name="theme-color" content="#0b0f14" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css" />
+  <link rel="stylesheet" href="css/hud.css" />
+  <link rel="stylesheet" href="css/animations.css" />
+  <style>
+    /* minimal inline grid to avoid new CSS files */
+    .card-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px;margin:20px 0}
+    .card{border:1px solid rgba(154,123,255,.18);background:linear-gradient(180deg,rgba(15,22,32,.6),rgba(15,22,32,.35));border-radius:14px;padding:14px 16px}
+    .card h3{margin:.2rem 0 .5rem;font-size:1.05rem}
+    .card p{margin:0;color:var(--muted);line-height:1.5}
+  </style>
+</head>
+<body class="bg-grid">
+  <aside class="hud-sidebar" aria-label="Primary">
+    <div class="brand"><span class="glyph"></span><span class="wordmark">REDTHREAD</span></div>
+    <nav class="nav">
+      <a class="nav-link" data-key="home" href="index.html"><span>Gateway</span></a>
+      <a class="nav-link" data-key="about" href="about.html"><span>Ethos / Covenant</span></a>
+      <a class="nav-link" data-key="modules" href="modules.html"><span>Modules</span></a>
+      <a class="nav-link" data-key="stacks" href="stacks.html"><span>Stacks & Tools</span></a>
+      <a class="nav-link" data-key="research" href="research.html"><span>Research</span></a>
+      <a class="nav-link" data-key="contact" href="contact.html"><span>Uplink</span></a>
+    </nav>
+    <div class="hud-footer"><button class="btn-help" id="helpToggle" aria-expanded="false" aria-controls="helpPanel">Help ▸</button></div>
+  </aside>
+
+  <section id="helpPanel" class="help-panel" aria-hidden="true">
+    <header><h2>HUD Help</h2><button id="helpClose" class="icon-btn" aria-label="Close help">✕</button></header>
+    <div class="help-content">
+      <p>Modules are self-contained consoles.</p>
+      <ul><li>Hover for status glows</li><li>Click to enter</li></ul>
+    </div>
+  </section>
+
+  <main class="stage">
+    <div class="stage-inner">
+      <h1 class="hero-title">Modules</h1>
+      <p class="hero-kicker">Composable consoles. Each module is a surface for a real task, designed to hold under stress.</p>
+
+      <div class="card-grid">
+        <article class="card">
+          <h3>🧭 FRI Console</h3>
+          <p>Run scenarios, capture signals, and compute readiness deltas.</p>
+        </article>
+        <article class="card">
+          <h3>🧱 Constraint Engine</h3>
+          <p>Define RED THREAD contracts; enforce homeostatic ranges.</p>
+        </article>
+        <article class="card">
+          <h3>🛰 Adversary Engine</h3>
+          <p>Multi-vector probes, agent-vs-agent, drift extraction.</p>
+        </article>
+        <article class="card">
+          <h3>🗄 Memory Ledger</h3>
+          <p>Immutable logs, snapshots, diffs; provenance-first records.</p>
+        </article>
+        <article class="card">
+          <h3>📡 Civic Integrations</h3>
+          <p>GeoNet, LINZ, LAWA — bind real signals to synthetic drills.</p>
+        </article>
+      </div>
+
+      <div class="hero-actions">
+        <a class="btn-primary" href="stacks.html">View Stacks</a>
+        <a class="btn-ghost" href="research.html">Open Research</a>
+      </div>
+      <div class="ambient"><div class="scanlines"></div><div class="vignette"></div></div>
+    </div>
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+  <script src="js/nav.js"></script>
+  <script src="js/gsap-animations.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

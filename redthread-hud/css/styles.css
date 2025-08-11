@@ -1,0 +1,98 @@
+:root{
+  --bg:#0b0f14;
+  --panel:#0f1620cc;
+  --panel-solid:#0f1620;
+  --glass:#0f1620b3;
+  --line:#1b2634;
+  --ink:#dbe7ff;
+  --muted:#8aa0bf;
+  --accent:#5ee6eb;
+  --accent-2:#9a7bff;
+  --danger:#ff4d6d;
+  --ok:#4df2a3;
+  --shadow:0 10px 25px rgba(0,0,0,.45);
+}
+
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0;
+  font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+  color:var(--ink);
+  background:var(--bg);
+  overflow-x:hidden;
+}
+
+/* Background Grid / Noise */
+.bg-grid{
+  background:
+    radial-gradient(1000px 500px at 80% 10%, rgba(94,230,235,.06), transparent 40%),
+    radial-gradient(800px 400px at 20% 90%, rgba(154,123,255,.05), transparent 45%),
+    linear-gradient(to bottom, rgba(255,255,255,.02), transparent 30%),
+    var(--bg);
+}
+
+/* Stage Layout */
+.stage{
+  margin-left: 280px; /* space for sidebar */
+  min-height:100dvh;
+  display:grid;
+  place-items:center;
+  position:relative;
+}
+.stage-inner{
+  width:min(1100px, 92vw);
+  padding:clamp(24px, 3vw, 48px);
+  background:linear-gradient(180deg, rgba(15,22,32,.65), rgba(15,22,32,.35));
+  border:1px solid rgba(154,123,255,.18);
+  backdrop-filter:saturate(120%) blur(8px);
+  border-radius:18px;
+  box-shadow:var(--shadow);
+  position:relative;
+  overflow:hidden;
+}
+
+.hero-title{
+  font-size: clamp(36px, 5vw, 64px);
+  letter-spacing:.02em;
+  margin:0 0 .2em;
+  text-shadow:0 0 24px rgba(94,230,235,.25);
+}
+.hero-kicker{
+  color:var(--muted);
+  margin:0 0 1.5rem;
+  max-width:70ch;
+  line-height:1.6;
+}
+
+/* Buttons */
+.btn-primary, .btn-ghost{
+  display:inline-flex; align-items:center; gap:.6rem;
+  padding:.9rem 1.2rem;
+  text-decoration:none; border-radius:12px;
+  border:1px solid transparent;
+  transition:transform .15s ease, box-shadow .2s ease, border-color .2s ease, background-color .2s ease;
+}
+.btn-primary{
+  background:linear-gradient(90deg, rgba(94,230,235,.15), rgba(154,123,255,.18));
+  border-color:rgba(94,230,235,.35);
+  box-shadow:0 0 0 0 rgba(94,230,235,.4);
+}
+.btn-primary:hover{ transform:translateY(-1px); box-shadow:0 10px 22px rgba(94,230,235,.18); }
+.btn-ghost{
+  color:var(--ink);
+  background:transparent;
+  border-color:rgba(154,123,255,.25);
+}
+.btn-ghost:hover{ border-color:rgba(154,123,255,.45); }
+
+/* Ambient overlays */
+.ambient .scanlines{
+  pointer-events:none; position:absolute; inset:-2px;
+  background-image: linear-gradient(rgba(255,255,255,.06) 1px, transparent 1px);
+  background-size: 100% 2px; mix-blend-mode:soft-light; opacity:.06;
+}
+.ambient .vignette{
+  pointer-events:none; position:absolute; inset:0;
+  box-shadow: inset 0 0 120px rgba(0,0,0,.65);
+}

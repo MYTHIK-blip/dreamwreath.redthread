@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en" data-page="stacks">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>REDTHREAD HUD — Stacks & Tools</title>
+  <meta name="theme-color" content="#0b0f14" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css" />
+  <link rel="stylesheet" href="css/hud.css" />
+  <link rel="stylesheet" href="css/animations.css" />
+  <style>
+    .stack-list{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px;margin-top:14px}
+    .stack{border:1px solid rgba(154,123,255,.18);border-radius:14px;padding:14px 16px;background:linear-gradient(180deg,rgba(15,22,32,.6),rgba(15,22,32,.35))}
+    .stack h3{margin:.2rem 0 .5rem;font-size:1.05rem}
+    .meta{color:var(--muted);font-size:.95rem;margin:.25rem 0 0}
+    .tag{display:inline-block;border:1px solid rgba(94,230,235,.35);padding:.15rem .5rem;border-radius:999px;margin:.2rem .25rem 0 0;font-size:.8rem}
+  </style>
+</head>
+<body class="bg-grid">
+  <aside class="hud-sidebar" aria-label="Primary">
+    <div class="brand"><span class="glyph"></span><span class="wordmark">REDTHREAD</span></div>
+    <nav class="nav">
+      <a class="nav-link" data-key="home" href="index.html"><span>Gateway</span></a>
+      <a class="nav-link" data-key="about" href="about.html"><span>Ethos / Covenant</span></a>
+      <a class="nav-link" data-key="modules" href="modules.html"><span>Modules</span></a>
+      <a class="nav-link" data-key="stacks" href="stacks.html"><span>Stacks & Tools</span></a>
+      <a class="nav-link" data-key="research" href="research.html"><span>Research</span></a>
+      <a class="nav-link" data-key="contact" href="contact.html"><span>Uplink</span></a>
+    </nav>
+    <div class="hud-footer"><button class="btn-help" id="helpToggle" aria-expanded="false" aria-controls="helpPanel">Help ▸</button></div>
+  </aside>
+
+  <section id="helpPanel" class="help-panel" aria-hidden="true">
+    <header><h2>HUD Help</h2><button id="helpClose" class="icon-btn" aria-label="Close help">✕</button></header>
+    <div class="help-content">
+      <p>Stacks = tech choices and baselines; minimal lock-in.</p>
+    </div>
+  </section>
+
+  <main class="stage">
+    <div class="stage-inner">
+      <h1 class="hero-title">Stacks & Tools</h1>
+      <p class="hero-kicker">Handpicked primitives with graceful fallback paths.</p>
+
+      <div class="stack-list">
+        <div class="stack">
+          <h3>Frontend</h3>
+          <div class="meta">HTML / CSS / JS + GSAP (baseline)</div>
+          <div class="meta">Option: Next.js + Tailwind (later)</div>
+          <div><span class="tag">GSAP</span><span class="tag">ARIA</span><span class="tag">No deps</span></div>
+        </div>
+        <div class="stack">
+          <h3>Data & APIs</h3>
+          <div class="meta">JSON/YAML specs; Civic sources (GeoNet, LINZ, LAWA)</div>
+          <div><span class="tag">Fetch</span><span class="tag">Local-first</span></div>
+        </div>
+        <div class="stack">
+          <h3>Security Model</h3>
+          <div class="meta">RED THREAD constraints; least privilege by default</div>
+          <div><span class="tag">Content Security Policy</span><span class="tag">Key hygiene</span></div>
+        </div>
+        <div class="stack">
+          <h3>Deployment</h3>
+          <div class="meta">Cloudflare Pages (CI/CD from GitHub)</div>
+          <div><span class="tag">SSL</span><span class="tag">Instant deploy</span></div>
+        </div>
+      </div>
+
+      <div class="hero-actions">
+        <a class="btn-primary" href="modules.html">Back to Modules</a>
+        <a class="btn-ghost" href="contact.html">Ask for a Stack Fit</a>
+      </div>
+      <div class="ambient"><div class="scanlines"></div><div class="vignette"></div></div>
+    </div>
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+  <script src="js/nav.js"></script>
+  <script src="js/gsap-animations.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

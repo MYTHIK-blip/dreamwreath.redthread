@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en" data-page="research">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>REDTHREAD HUD — Research</title>
+  <meta name="theme-color" content="#0b0f14" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css" />
+  <link rel="stylesheet" href="css/hud.css" />
+  <link rel="stylesheet" href="css/animations.css" />
+  <style>
+    .list{display:grid;gap:12px;margin-top:12px}
+    .item{padding:12px 14px;border:1px solid rgba(154,123,255,.18);border-radius:12px;background:linear-gradient(180deg,rgba(15,22,32,.6),rgba(15,22,32,.35))}
+    .meta{color:var(--muted);font-size:.95rem}
+  </style>
+</head>
+<body class="bg-grid">
+  <aside class="hud-sidebar" aria-label="Primary">
+    <div class="brand"><span class="glyph"></span><span class="wordmark">REDTHREAD</span></div>
+    <nav class="nav">
+      <a class="nav-link" data-key="home" href="index.html"><span>Gateway</span></a>
+      <a class="nav-link" data-key="about" href="about.html"><span>Ethos / Covenant</span></a>
+      <a class="nav-link" data-key="modules" href="modules.html"><span>Modules</span></a>
+      <a class="nav-link" data-key="stacks" href="stacks.html"><span>Stacks & Tools</span></a>
+      <a class="nav-link" data-key="research" href="research.html"><span>Research</span></a>
+      <a class="nav-link" data-key="contact" href="contact.html"><span>Uplink</span></a>
+    </nav>
+    <div class="hud-footer"><button class="btn-help" id="helpToggle" aria-expanded="false" aria-controls="helpPanel">Help ▸</button></div>
+  </aside>
+
+  <section id="helpPanel" class="help-panel" aria-hidden="true">
+    <header><h2>HUD Help</h2><button id="helpClose" class="icon-btn" aria-label="Close help">✕</button></header>
+    <div class="help-content">
+      <p>Research archive. Later this can bind to a JSON index.</p>
+    </div>
+  </section>
+
+  <main class="stage">
+    <div class="stage-inner">
+      <h1 class="hero-title">Research & Archives</h1>
+      <p class="hero-kicker">Signals, methods, and references held in a stable surface.</p>
+
+      <div class="list">
+        <div class="item"><strong>FRI Method Notes</strong><div class="meta">Baselines, deltas, debt; constraints-first scoring.</div></div>
+        <div class="item"><strong>Constraint Patterns</strong><div class="meta">Ethics gate templates; operating envelopes; kill-switch logic.</div></div>
+        <div class="item"><strong>Adversary Playbooks</strong><div class="meta">Multi-vector probe catalog; red/blue/purple tactics.</div></div>
+        <div class="item"><strong>Memory Models</strong><div class="meta">Immutable logs, snapshots, provenance trails.</div></div>
+      </div>
+
+      <div class="hero-actions">
+        <a class="btn-primary" href="about.html">Read Covenant</a>
+        <a class="btn-ghost" href="modules.html">Launch a Console</a>
+      </div>
+      <div class="ambient"><div class="scanlines"></div><div class="vignette"></div></div>
+    </div>
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+  <script src="js/nav.js"></script>
+  <script src="js/gsap-animations.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

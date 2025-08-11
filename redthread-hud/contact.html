@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en" data-page="contact">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>REDTHREAD HUD — Uplink</title>
+  <meta name="theme-color" content="#0b0f14" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css" />
+  <link rel="stylesheet" href="css/hud.css" />
+  <link rel="stylesheet" href="css/animations.css" />
+  <style>
+    form{display:grid;gap:12px;margin-top:16px}
+    input, textarea{
+      width:100%;padding:12px 14px;border-radius:10px;
+      border:1px solid rgba(154,123,255,.25); background:rgba(15,22,32,.6); color:var(--ink)
+    }
+    textarea{min-height:140px;resize:vertical}
+    .hint{color:var(--muted);font-size:.95rem}
+  </style>
+</head>
+<body class="bg-grid">
+  <aside class="hud-sidebar" aria-label="Primary">
+    <div class="brand"><span class="glyph"></span><span class="wordmark">REDTHREAD</span></div>
+    <nav class="nav">
+      <a class="nav-link" data-key="home" href="index.html"><span>Gateway</span></a>
+      <a class="nav-link" data-key="about" href="about.html"><span>Ethos / Covenant</span></a>
+      <a class="nav-link" data-key="modules" href="modules.html"><span>Modules</span></a>
+      <a class="nav-link" data-key="stacks" href="stacks.html"><span>Stacks & Tools</span></a>
+      <a class="nav-link" data-key="research" href="research.html"><span>Research</span></a>
+      <a class="nav-link" data-key="contact" href="contact.html"><span>Uplink</span></a>
+    </nav>
+    <div class="hud-footer"><button class="btn-help" id="helpToggle" aria-expanded="false" aria-controls="helpPanel">Help ▸</button></div>
+  </aside>
+
+  <section id="helpPanel" class="help-panel" aria-hidden="true">
+    <header><h2>HUD Help</h2><button id="helpClose" class="icon-btn" aria-label="Close help">✕</button></header>
+    <div class="help-content">
+      <p>Uplink form (static). Hook to a backend later or use a service form action.</p>
+    </div>
+  </section>
+
+  <main class="stage">
+    <div class="stage-inner">
+      <h1 class="hero-title">Uplink</h1>
+      <p class="hero-kicker">Send a signal. Minimal form today; encrypted channel later.</p>
+
+      <form name="uplink" method="post" action="#">
+        <label>
+          <span>Callsign</span>
+          <input type="text" name="name" placeholder="e.g., _MYTHIK_" required />
+        </label>
+        <label>
+          <span>Return Link</span>
+          <input type="email" name="email" placeholder="you@domain" required />
+        </label>
+        <label>
+          <span>Message</span>
+          <textarea name="message" placeholder="What are we building?"></textarea>
+        </label>
+        <div class="hero-actions">
+          <button class="btn-primary" type="submit">Transmit</button>
+          <a class="btn-ghost" href="index.html">Back to Gateway</a>
+        </div>
+        <p class="hint">Note: This is a static form. Add a real endpoint or Cloudflare Worker later.</p>
+      </form>
+
+      <div class="ambient"><div class="scanlines"></div><div class="vignette"></div></div>
+    </div>
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+  <script src="js/nav.js"></script>
+  <script src="js/gsap-animations.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en" data-page="home">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>REDTHREAD HUD — Gateway</title>
+  <meta name="theme-color" content="#0b0f14" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css" />
+  <link rel="stylesheet" href="css/hud.css" />
+  <link rel="stylesheet" href="css/animations.css" />
+</head>
+<body class="bg-grid">
+  <!-- Sidebar HUD -->
+  <aside class="hud-sidebar" aria-label="Primary">
+    <div class="brand">
+      <span class="glyph"></span>
+      <span class="wordmark">REDTHREAD</span>
+    </div>
+    <nav class="nav">
+      <a class="nav-link" data-key="home" href="index.html"><span>Gateway</span></a>
+      <a class="nav-link" data-key="about" href="about.html"><span>Ethos / Covenant</span></a>
+      <a class="nav-link" data-key="modules" href="modules.html"><span>Modules</span></a>
+      <a class="nav-link" data-key="stacks" href="stacks.html"><span>Stacks & Tools</span></a>
+      <a class="nav-link" data-key="research" href="research.html"><span>Research</span></a>
+      <a class="nav-link" data-key="contact" href="contact.html"><span>Uplink</span></a>
+    </nav>
+    <div class="hud-footer">
+      <button class="btn-help" id="helpToggle" aria-expanded="false" aria-controls="helpPanel">Help ▸</button>
+    </div>
+  </aside>
+
+  <!-- Hidden Fly‑out Help -->
+  <section id="helpPanel" class="help-panel" aria-hidden="true">
+    <header>
+      <h2>HUD Help</h2>
+      <button id="helpClose" class="icon-btn" aria-label="Close help">✕</button>
+    </header>
+    <div class="help-content">
+      <p>Welcome to the REDTHREAD console.</p>
+      <ul>
+        <li><kbd>?</kbd> Open/Close Help</li>
+        <li><kbd>G</kbd> then <kbd>H</kbd> — Gateway</li>
+        <li><kbd>G</kbd> then <kbd>M</kbd> — Modules</li>
+        <li><kbd>G</kbd> then <kbd>R</kbd> — Research</li>
+      </ul>
+      <p>Use the left HUD to navigate. Micro-animations indicate active state and data flow.</p>
+    </div>
+  </section>
+
+  <!-- Page Content -->
+  <main class="stage">
+    <div class="stage-inner">
+      <h1 class="hero-title">Enter the Console</h1>
+      <p class="hero-kicker">Dark • Holographic • Once‑Human Feel. An anvil for productive focus.</p>
+      <div class="hero-actions">
+        <a class="btn-primary" href="modules.html">Begin</a>
+        <a class="btn-ghost" href="about.html">Read Covenant</a>
+      </div>
+
+      <!-- Ambient layer (optional imagery) -->
+      <div class="ambient">
+        <!-- If you add images later: <img src="assets/images/backgrounds/noise.png" alt="" /> -->
+        <div class="scanlines"></div>
+        <div class="vignette"></div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+  <script src="js/nav.js"></script>
+  <script src="js/gsap-animations.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
